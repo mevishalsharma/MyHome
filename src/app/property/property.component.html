@@ -1,0 +1,42 @@
+<div class="container">
+  <span style="padding:5px;">
+    <h6>Add New Property</h6>
+  </span>
+  <div>
+    <form class="example-form">
+
+      <mat-form-field class="example-full-width">
+        <input matInput name="GroupLogoUrl" placeholder="GroupLogoUrl" [(ngModel)]="propertyElement.GroupLogoUrl">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput  name="BedsString" placeholder="BedsString" [(ngModel)]="propertyElement.BedsString">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput name="Price" placeholder="Price" [(ngModel)]="propertyElement.Price">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput name="SizeStringMeters" placeholder="SizeStringMeters" [(ngModel)]="propertyElement.SizeStringMeters">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput name="DisplayAddress" placeholder="DisplayAddress" [(ngModel)]="propertyElement.DisplayAddress">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput name="PropertyType" placeholder="PropertyType" [(ngModel)]="propertyElement.PropertyType">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput name="BathString" placeholder="BathString" [(ngModel)]="propertyElement.BathString">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput name="BerRating" placeholder="BerRating" [(ngModel)]="propertyElement.BerRating">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput name="MainPhoto" placeholder="MainPhoto" [(ngModel)]="propertyElement.MainPhoto">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput name="Photos" placeholder="Photos" [(ngModel)]="propertyElement.Photos">
+      </mat-form-field>
+    </form>
+  </div>
+  <button class="btn btn-primary" (click)="onSubmitClick()">Submit</button>&nbsp;&nbsp;
+  <button class="btn btn-primary" (click)="onBackClick()">Back</button>
+</div>

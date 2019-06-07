@@ -1,0 +1,63 @@
+<div class="container">
+  <br/>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+  </form>
+
+  <div class="example-container mat-elevation-z8">
+
+    <mat-table #table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="MainPhoto">
+        <mat-header-cell *matHeaderCellDef > MainPhoto </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <img [src]="element.MainPhoto"  width="42" height="42" /> </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="DisplayAddress">
+        <mat-header-cell *matHeaderCellDef > Display Address </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.DisplayAddress}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Price">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Price </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.Price}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="BedsString">
+        <mat-header-cell *matHeaderCellDef > Beds </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.BedsString}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="BathString">
+        <mat-header-cell *matHeaderCellDef > Bath </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.BathString}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="GroupLogoUrl">
+        <mat-header-cell *matHeaderCellDef > Agent Logo </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <img src="{{element.GroupLogoUrl}}"  width="42" height="42" />         
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Action </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <a   routerLink="brochure/{{element.PropertyId}}">Brochure</a>
+          |<a   routerLink="gallery/{{element.PropertyId}}">Gallery</a>
+          
+          |<a   style="cursor: pointer;" (click)="onDelete(element.PropertyId)">Delete</a>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true">
+    </mat-paginator>
+
+  </div>
+</div>
